@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
+import propTypes from 'prop-types';
+
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     const [edit, setEdit] = useState({
@@ -42,5 +44,10 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
         </div>
     ));
 };
-
+Todo.propTypes = {
+    todos: propTypes.array.isRequired,
+    completeTodo: propTypes.func.isRequired,
+    removeTodo: propTypes.func.isRequired,
+    updateTodo: propTypes.func.isRequired
+}
 export default Todo;

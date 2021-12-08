@@ -1,4 +1,6 @@
+import propTypes from 'prop-types';
 import React, { useState, useEffect, useRef } from 'react';
+
 
 function TodoForm(props) {
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -57,5 +59,9 @@ function TodoForm(props) {
         </form>
     );
 }
+TodoForm.propTypes = {
+    onSubmit: propTypes.func.isRequired
+}
+
 
 export default TodoForm;
